@@ -1,7 +1,6 @@
 ﻿// Fugure_Kom_Raz.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
-#include "pch.h"
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -63,5 +62,6 @@ int main()
 	for (int i = 0; i < count_figure; i++) {
 		delete[] FigureList[i];
 	}
+	system("pause");
 	return 0;
 }

@@ -6,7 +6,7 @@ Circle::Circle() : figure()
 {
 }
 
-Circle::Circle(double _rad) : figure(_rad, _rad)
+Circle::Circle(double _rad) : figure(_rad*2, _rad*2)
 {
 	radius = _rad;
 }
