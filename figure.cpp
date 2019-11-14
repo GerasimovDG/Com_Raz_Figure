@@ -2,14 +2,10 @@
 #include "figure.h"
 
 
-figure::figure()
-{
+Figure::Figure() {
 }
 
-figure::figure(double _height, double _width)
-{
-	height = _height;
-	width = _width;
+Figure::Figure(double _height, double _width) : height(_height), width(_width) {
 }
 
 

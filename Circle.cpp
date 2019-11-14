@@ -2,18 +2,17 @@
 #include "Circle.h"
 
 
-Circle::Circle() : figure()
-{
+Circle::Circle() : Figure() {
 }
 
-Circle::Circle(double _rad) : figure(_rad*2, _rad*2)
-{
-	radius = _rad;
+Circle::Circle(double _rad) : Figure(), 
+								radius(_rad), 
+								area(pow(radius, 2) * M_PI){
 }
 
 
 double Circle::getArea() {
-	return pow(radius, 2) * M_PI;
+	return area;
 }
 
 string Circle::getType() {
