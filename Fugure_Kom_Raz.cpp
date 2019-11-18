@@ -14,7 +14,7 @@ using namespace std;
 
 struct sort_class_x
 {
-	bool operator() (Figure* i, Figure* j)
+	bool operator() (shared_ptr<Figure>i, shared_ptr<Figure>j)
 	{
 		return (i->getArea() < j->getArea());
 	}
@@ -27,14 +27,14 @@ int main()
 
 	int count_figure = 15;	// количество фигур, которое создадим
 
-	vector<Figure*> figureList(count_figure);
+	vector<shared_ptr<Figure>> figureList(count_figure);
 
 	for (int i = 0; i < count_figure; i++) {
 		if (rand() % 2 == 0) {
-			figureList[i] = new Circle(rand() % 50 + 1);
+			figureList[i] = make_shared<Circle>(rand() % 50 + 1);
 		}
 		else {
-			figureList[i] = new Ellipse(rand() % 50 + 1,rand() % 50 + 1);
+			figureList[i] = make_shared<Ellipse>(rand() % 50 + 1, rand() % 50 + 1);
 		}
 	}
 
@@ -60,8 +60,5 @@ int main()
 	}
 	cout << "\nTotal circle area: " << total_area << "." << endl;
 
-	for (int i = 0; i < count_figure; i++) {
-		delete[] figureList[i];
-	}
 	return 0;
 }
