@@ -4,6 +4,7 @@
 #include<iostream>
 #include <string>
 #include <math.h>
+#include "DataPrinter.h"
 
 using namespace std;
 
@@ -20,6 +21,6 @@ public:
 	virtual double getArea() = 0;	//	вернуть площадь фигуры
 	virtual string getType() = 0;	//	вернуть тип фигуры
 
-
+	virtual void accept(shared_ptr<Visitor> visitor) = 0;
 };
 

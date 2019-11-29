@@ -18,3 +18,8 @@ double Circle::getArea() {
 string Circle::getType() {
 	return "Circle";
 }
+
+void Circle::accept(shared_ptr<Visitor> visitor)
+{
+	visitor->visitCircle(this);
+}

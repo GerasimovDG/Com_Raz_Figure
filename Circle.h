@@ -13,5 +13,7 @@ public:
 	virtual double getArea();
 	virtual string getType();
 
+	void accept(shared_ptr<Visitor> visitor);
+
 };
 

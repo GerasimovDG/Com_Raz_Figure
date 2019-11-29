@@ -9,6 +9,7 @@
 #include "figure.h"
 #include "Circle.h"
 #include "Ellipse.h"
+#include "DataPrinter.h"
 
 using namespace std;
 
@@ -28,6 +29,10 @@ int main()
 	int count_figure = 15;	// количество фигур, которое создадим
 
 	vector<shared_ptr<Figure>> figureList(count_figure);
+
+	// создаем визитер
+	shared_ptr<DataPrinter> viss = make_shared<DataPrinter>();
+
 
 	for (int i = 0; i < count_figure; i++) {
 		if (rand() % 2 == 0) {
@@ -60,5 +65,12 @@ int main()
 	}
 	cout << "\nTotal circle area: " << total_area << "." << endl;
 
+	// выводим информацию, используя визитер
+	cout << "\n ---- Visitor ----" << endl;
+	for (int i = 0; i < count_figure; i++) {
+		figureList[i]->accept(viss);
+	}
+
+	system("pause");
 	return 0;
 }

@@ -18,3 +18,8 @@ double Ellipse::getArea() {
 string Ellipse::getType() {
 	return "Ellipse";
 }
+
+void Ellipse::accept(shared_ptr<Visitor> visitor)
+{
+	visitor->visitEllipse(this);
+}
